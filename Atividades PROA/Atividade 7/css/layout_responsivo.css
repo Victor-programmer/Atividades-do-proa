@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: white;
+    
+}
+
+main {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+
+#titulo_pagina {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background-color: #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu_superior {
+    width: 100%;
+    height: 40px;
+    background-color: blue;
+}
+
+#menu_lateral {
+    float: left;
+    width: 20%;
+    height: 660px;
+    background-color: rgb(198, 240, 121);
+}
+
+#meio {
+    width: 58%;
+    height: 660px;
+    background-color: pink;
+    float: left;
+    padding-left: 1%;
+    padding-right: 1%;
+    
+}
+
+#titulo_meio {
+    width: 100%;
+    height: 40px;
+    background-color: #FFF;
+    color: black;
+    margin-top: 10px;
+}
+
+#div_meio {
+    width: 100%;
+    height: 260px;
+    background-color: rgb(161, 49, 4);
+    margin-top: 10px;
+}
+
+#div_meio img{
+    width: 100%;
+    height: 100%;
+}
+
+
+#meio p {
+    width: 100%;
+    height: 110px;
+    background-color: rgb(187, 151, 211);
+    margin-top: 10px;
+}
+
+#container {
+    width: 100%;
+    height: 200px;
+    background-color: #efff10;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.caixa{
+    width: 30%;
+    height: 100%;
+    background-color: #CCC;
+}
+
+#caixa1{
+    background-image: url(../images/rodovia.jpg);
+    background-size:cover;
+
+}
+
+#caixa2{
+    background-image: url(../images/noiteLunar.jpg);
+    background-size:cover;
+
+}
+
+#caixa3{
+    background-image: url(../images/sol.jpg); 
+    background-size:cover;
+
+}
+
+aside {
+    font-size: px;
+    float: left;
+    width: 20%;
+    height:660px;
+    background-color: #e870f8;
+}
+
+aside img{
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    clear:left;
+}

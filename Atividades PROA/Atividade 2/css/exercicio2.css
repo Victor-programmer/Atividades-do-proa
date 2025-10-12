@@ -1,0 +1,51 @@
+html{
+    margin: 0;
+}
+
+
+p{
+    text-align: center;
+    margin: 0;
+}
+
+#azul{
+    width: 250px;
+    height: 120px;
+    position: absolute;
+    background-color: rgb(80, 80, 254);
+    color: black;
+}
+#vermelho{
+    width: 700px;
+    height: 120px;
+    position: absolute;
+    background-color: rgb(180, 24, 24);
+    left: 250px;
+}
+.bloco{
+    position: absolute;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+#verde{
+    width: 950px;
+    height: 47px;
+    position: absolute;
+    background-color: rgb(17, 78, 17);
+    top: 110px;
+}
+#amarelo{
+    width: 930px;
+    height: 450px;
+    position: absolute;
+    border: 10px solid rgb(255, 190, 190);
+    background-color: rgba(255, 255, 0, 0.588);
+    top: 157px;
+}
+#cinza{
+    width: 950px;
+    height: 50px;
+    position: absolute;
+    background-color: gray;
+    top: 625px;
+}
