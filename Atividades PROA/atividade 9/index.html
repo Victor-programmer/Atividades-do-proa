@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailchimp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #c5dbf2;
+            min-height: 100vh;
+        }
+        
+        .barra-navegacao {
+            background: #c5dbf2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 0 2rem;
+        }
+        
+        .container-navegacao {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        
+        .navegacao-esquerda {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .navegacao-esquerda a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .logotipo {
+            width: 150px;
+            height: 50px;
+            object-fit: cover;
+            background-image: url("imagens/figura1.png");
+        }
+        
+        .navegacao-direita {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .icone {
+            width: 100px;
+            height: 30px;
+            background-image: url("imagens/figura4.png");
+        }
+        
+        .botao-contato {
+            background: #e3f2fd00;
+            color: #7e7e7e;
+            padding: 8px 16px;
+            border: solid black 2px;
+
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .botao-cadastro {
+            background: #12615e;
+            color: white;
+            padding: 15px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .conteudo-principal {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .secao-texto h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #333;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .secao-texto p {
+            font-size: 1.125rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .botao-saiba-mais {
+            background: #12615e;
+            color: white;
+            padding: 25px 40px;
+            border: none;
+            font-size: 13pxrem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .secao-modelo {
+            position: relative;
+        }
+        
+        .modelo-navegador {
+            background: #ffe4e1;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .barra-navegador {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .pontos-navegador {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .ponto {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .ponto.vermelho { background: #535353; }
+        .ponto.amarelo { background: #535353; }
+        .ponto.verde { background: #535353; }
+        
+        .icone-menu {
+            width: 20px;
+            height: 20px;
+            background-image: url("imagens/carrinho.png");
+        }
+        
+        .titulo-spa {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        
+        .vitrine-produto {
+            
+            border-radius: 20px;
+            padding: 1rem;
+            display: flex;
+            
+        }
+        
+        .imagem-produto {
+            width: 230px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .carrinho-compras {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.952);
+            position: absolute;
+            bottom: -50px;
+            left: 90%;
+            transform: translateX(-50%);
+            width: 280px;
+            z-index: 10;
+        }
+        
+        .cabecalho-carrinho {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .cabecalho-carrinho h4 {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .item-carrinho {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .imagem-item-carrinho {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .info-item-carrinho {
+            flex: 1;
+        }
+        
+        .nome-item-carrinho {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .preco-item-carrinho {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .botao-finalizar {
+            width: 100%;
+            background: #12615e;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="barra-navegacao">
+        <div class="container-navegacao">
+            <div class="navegacao-esquerda">
+                <a href="#">Produtos</a>
+                <a href="#">Recursos</a>
+                <a href="#">Inspiração</a>
+                <a href="#">Preços</a>
+            </div>
+            
+            <div class="logotipo"></div>
+            
+            <div class="navegacao-direita">
+                <div class="icone"></div>
+                <button class="botao-contato">Contatar</button>
+                <button class="botao-cadastro">Cadastre-se Gratuitamente</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="conteudo-principal">
+        <div class="secao-texto">
+            <h1>As lojas do<br>Mailchimp já<br>estão disponíveis</h1>
+            <p>Impulsione as vendas, envolva os clientes, e<br>anuncie seu negócio em um lugar só lugar.<br>Crie sua loja virtual gratuitamente.</p>
+            <button class="botao-saiba-mais">Saiba Mais</button>
+        </div>
+
+        <div class="secao-modelo">
+            <div class="modelo-navegador">
+                <div class="barra-navegador">
+                    <div class="pontos-navegador">
+                        <div class="ponto vermelho"></div>
+                        <div class="ponto amarelo"></div>
+                        <div class="ponto verde"></div>
+                    </div>
+                    <div class="icone-menu"></div>
+                </div>
+                
+                <div class="titulo-spa">Big Mood Spa</div>
+                
+                <div class="vitrine-produto">
+                    <img src="./imagens/figura2.png" alt="Produto" class="imagem-produto">
+                </div>
+            </div>
+            
+            <div class="carrinho-compras">
+                    <div class="cabecalho-carrinho">
+                        <h4>Shopping Cart</h4>
+                    </div>
+                    
+                    <div class="item-carrinho">
+                        <img src="./imagens/figura2.png" alt="Produto" class="imagem-item-carrinho">
+                        <div class="info-item-carrinho">
+                            <div class="nome-item-carrinho">Sweet Relaxation</div>
+                        </div>
+                        <div class="preco-item-carrinho">$40</div>
+                    </div>
+                    
+                    <div class="item-carrinho">
+                        <img src="./imagens/figura2.png" alt="Produto" class="imagem-item-carrinho">
+                        <div class="info-item-carrinho">
+                            <div class="nome-item-carrinho">Big Comfort Sun Milk</div>
+                        </div>
+                        <div class="preco-item-carrinho">$30</div>
+                    </div>
+                    
+                    <button class="botao-finalizar">Continue to Checkout</button>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
